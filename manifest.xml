@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Manifest add-in Excel: Dashboard Transfer Dana
+  Di-hosting di GitHub Pages: https://khairunidakhumaira.github.io/dashboard-transfer-dana/
+-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>6f1c2a7e-3b9d-4c51-9a2e-7d4b8e0f5a13</Id>
+  <Version>1.1.0.0</Version>
+  <ProviderName>Dashboard Transfer Dana</ProviderName>
+  <DefaultLocale>id-ID</DefaultLocale>
+  <DisplayName DefaultValue="Dashboard Transfer Dana"/>
+  <Description DefaultValue="Dashboard interaktif Laporan Bulanan Transaksi Transfer Dana (sistem/sarana di luar sistem BI). Membaca tabel tblData dari workbook macro."/>
+  <IconUrl DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/dashboard.html"/>
+  <AppDomains>
+    <AppDomain>https://khairunidakhumaira.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="ExcelApi" MinVersion="1.7"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/dashboard.html"/>
+  </DefaultSettings>
+  <Permissions>ReadDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="TD.GetStarted.Title"/>
+            <Description resid="TD.GetStarted.Description"/>
+            <LearnMoreUrl resid="TD.LearnMore.Url"/>
+          </GetStarted>
+          <FunctionFile resid="TD.Taskpane.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="TD.Group">
+                <Label resid="TD.Group.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="TD.Icon.16"/>
+                  <bt:Image size="32" resid="TD.Icon.32"/>
+                  <bt:Image size="80" resid="TD.Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TD.ShowTaskpane">
+                  <Label resid="TD.Button.Label"/>
+                  <Supertip>
+                    <Title resid="TD.Button.Label"/>
+                    <Description resid="TD.Button.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="TD.Icon.16"/>
+                    <bt:Image size="32" resid="TD.Icon.32"/>
+                    <bt:Image size="80" resid="TD.Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>TDDashboard</TaskpaneId>
+                    <SourceLocation resid="TD.Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="TD.Icon.16" DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/assets/icon-16.png"/>
+        <bt:Image id="TD.Icon.32" DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/assets/icon-32.png"/>
+        <bt:Image id="TD.Icon.80" DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="TD.Taskpane.Url" DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/dashboard.html"/>
+        <bt:Url id="TD.LearnMore.Url" DefaultValue="https://khairunidakhumaira.github.io/dashboard-transfer-dana/dashboard.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="TD.GetStarted.Title" DefaultValue="Dashboard Transfer Dana siap dipakai"/>
+        <bt:String id="TD.Group.Label" DefaultValue="Transfer Dana"/>
+        <bt:String id="TD.Button.Label" DefaultValue="Dashboard"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="TD.GetStarted.Description" DefaultValue="Buka workbook macro Pengolah Data Transfer Dana, lalu klik tombol Dashboard di tab Home."/>
+        <bt:String id="TD.Button.Tooltip" DefaultValue="Tampilkan dashboard interaktif frekuensi dan nilai transfer dana per bulan, kategori, dan sarana."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
