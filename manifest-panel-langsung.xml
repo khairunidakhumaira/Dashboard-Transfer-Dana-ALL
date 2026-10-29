@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Manifest add-in Excel (versi panel langsung, tanpa tombol ribbon): Dashboard Transfer Dana
+  Di-hosting di GitHub Pages: https://khairunidakhumaira.github.io/Dashboard-Transfer-Dana-ALL/
+-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>b3d8e1f4-5a7c-4e2b-9c61-2f0a7d9e4b58</Id>
+  <Version>1.1.1.0</Version>
+  <ProviderName>Dashboard Transfer Dana</ProviderName>
+  <DefaultLocale>id-ID</DefaultLocale>
+  <DisplayName DefaultValue="Dashboard Transfer Dana (Panel)"/>
+  <Description DefaultValue="Dashboard interaktif Laporan Bulanan Transaksi Transfer Dana (sistem/sarana di luar sistem BI). Membaca tabel tblData dari workbook macro."/>
+  <IconUrl DefaultValue="https://khairunidakhumaira.github.io/Dashboard-Transfer-Dana-ALL/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://khairunidakhumaira.github.io/Dashboard-Transfer-Dana-ALL/icon-64.png"/>
+  <SupportUrl DefaultValue="https://khairunidakhumaira.github.io/Dashboard-Transfer-Dana-ALL/dashboard.html"/>
+  <AppDomains>
+    <AppDomain>https://khairunidakhumaira.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="ExcelApi" MinVersion="1.7"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://khairunidakhumaira.github.io/Dashboard-Transfer-Dana-ALL/dashboard.html"/>
+  </DefaultSettings>
+  <Permissions>ReadDocument</Permissions>
+</OfficeApp>
